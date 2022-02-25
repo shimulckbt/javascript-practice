@@ -23,3 +23,4 @@ function attackHandler() {
 }
 
 attackBtn.addEventListener('click', attackHandler);
+// starting method
