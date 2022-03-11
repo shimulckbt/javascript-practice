@@ -59,60 +59,6 @@ function writeToLog(ev, val, monsterLife, playerLife) {
    }
    battleLog.push(logEntry);
 }
-function writeToLog(ev, val, monsterLife, playerLife) {
-   let logEntry = {
-      event: ev,
-      value: val,
-      finalMonsterLife: monsterLife,
-      finalPlayerLife: playerLife,
-   };
-   if (ev === LOG_EVENT_PLAYER_ATTACK) {
-      logEntry.target = 'MONSTER';
-   } else if (ev === LOG_EVENT_PLAYER_STRONG_ATTACK) {
-      logEntry.target = 'MONSTER';
-   } else if (ev === LOG_EVENT_MONSTER_ATTACK) {
-      logEntry.target = 'PLAYER';
-   } else if (ev === LOG_EVENT_MONSTER_STRONG_ATTACK) {
-      logEntry.target = 'PLAYER';
-   } else if (ev === LOG_EVENT_PLAYER_HEAL) {
-      logEntry.target = 'PLAYER';
-   } else if (ev === LOG_EVENT_GAME_OVER) {
-      logEntry = {
-         event: ev,
-         value: val,
-         finalMonsterLife: monsterLife,
-         finalPlayerLife: playerLife,
-      };
-   }
-   battleLog.push(logEntry);
-}
-function writeToLog(ev, val, monsterLife, playerLife) {
-   let logEntry = {
-      event: ev,
-      value: val,
-      finalMonsterLife: monsterLife,
-      finalPlayerLife: playerLife,
-   };
-   if (ev === LOG_EVENT_PLAYER_ATTACK) {
-      logEntry.target = 'MONSTER';
-   } else if (ev === LOG_EVENT_PLAYER_STRONG_ATTACK) {
-      logEntry.target = 'MONSTER';
-   } else if (ev === LOG_EVENT_MONSTER_ATTACK) {
-      logEntry.target = 'PLAYER';
-   } else if (ev === LOG_EVENT_MONSTER_STRONG_ATTACK) {
-      logEntry.target = 'PLAYER';
-   } else if (ev === LOG_EVENT_PLAYER_HEAL) {
-      logEntry.target = 'PLAYER';
-   } else if (ev === LOG_EVENT_GAME_OVER) {
-      logEntry = {
-         event: ev,
-         value: val,
-         finalMonsterLife: monsterLife,
-         finalPlayerLife: playerLife,
-      };
-   }
-   battleLog.push(logEntry);
-}
 
 /////       WriteToLog END     ////////
 
