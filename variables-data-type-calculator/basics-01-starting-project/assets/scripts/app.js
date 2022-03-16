@@ -59,21 +59,7 @@ function multiply() {
    console.log(logEntries);
 }
 
-function devide() {
-   const enteredNumber = getUserNumber();
-   const initialResult = currentResult;
-   // currentResult = currentResult + parseInt(enteredNumber);//work as below line but specify only integer
-   currentResult = currentResult / +(enteredNumber);
-   createAndWriteOutput('/', initialResult, enteredNumber);
-   const logEntry = {
-      operation: 'DEVIDE',
-      prevResult: initialResult,
-      number: enteredNumber,
-      result: currentResult
-   }
-   logEntries.push(logEntry);
-   console.log(logEntries);
-}
+
 
 addBtn.addEventListener('click', add);
 subtractBtn.addEventListener('click', subtract);
