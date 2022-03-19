@@ -17,11 +17,16 @@ class ProductItem {
       this.product = product;
    }
 
+   addToCart() {
+      console.log('Adding product to cart');
+      console.log(this.product);
+   }
+
    render() {
       const prodEl = document.createElement('li');
       prodEl.className = 'product-item';
       prodEl.innerHTML = `
-        <div>
+        <div> 
           <img src="${this.product.imageUrl}" alt="${this.product.title}" >
           <div class="product-item__content">
             <h2>${this.product.title}</h2>
@@ -31,6 +36,8 @@ class ProductItem {
           </div>
         </div>
       `;
+      const addCartButton = prodEl.querySelector('button');
+      addCartButton.addEventListener('click', this.addToCart.bind(this));
       return prodEl;
    }
 }
