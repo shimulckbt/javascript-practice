@@ -14,7 +14,12 @@ const person = ['shimul', 'ckbt', 1994];
 const personString = person.join(' ');
 // console.log(personString);
 
-console.log(numbers);
+// console.log(numbers);
 const copiedPerson = [...numbers];
 copiedPerson.push(12);
-console.log(copiedPerson);
+// console.log(copiedPerson);
+
+const myName = ['shimul', 'ckbt', 1994];
+
+const [firstName, lastName, birtyYear] = myName;
+console.log(firstName, lastName, birtyYear);
