@@ -19,4 +19,7 @@ const copiedPerson = [...numbers];
 copiedPerson.push(12);
 // console.log(copiedPerson);
 
+const myName = ['shimul', 'ckbt', 1994];
 
+const [firstName, lastName, birtyYear] = myName;
+console.log(firstName, lastName, birtyYear);
