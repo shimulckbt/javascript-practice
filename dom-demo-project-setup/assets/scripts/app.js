@@ -54,7 +54,23 @@ const deleteMovieHandler = (movieId) => {
    confirmDeletionButton.addEventListener('click', deleteMovie.bind(null, movieId));
 };
 
+const renderNewMovieElement = (id, title, image, rating) => {
+   const newMovieElement = document.createElement('li');
+   newMovieElement.className = 'movie-element';
+   newMovieElement.innerHTML = `
+      <div class = "movie-element__image">
+         <img src = "${image}" alt = "${title}">
+      </div>
+      <div class = "movie-element__info">
+         <h2>${title}</h2>
+         <p>${rating}/5 stars</p>
+      </div>
+   `;
 
+   newMovieElement.addEventListener('click', deleteMovieHandler.bind(null, id));
+   const listRoot = document.getElementById('movie-list');
+   listRoot.append(newMovieElement);
+};
 
 const toggleBackdrop = () => {
    backdrop.classList.toggle('visible');
