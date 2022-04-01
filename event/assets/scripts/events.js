@@ -44,9 +44,24 @@ const div = document.querySelector('div');
 div.addEventListener('click', event => {
    console.log('CLICKED DIV');
    console.log(event);
-}, true);
+});
+
+/// for capturing phase
+// div.addEventListener('click', event => {
+//    console.log('CLICKED DIV');
+//    console.log(event);
+// }, true)
 
 button.addEventListener('click', event => {
+   event.stopPropagation();//it will prevent ther evnt trigger from it's ancestor
    console.log('CLICKED BUTTON');
    console.log(event);
+});
+
+const listItems = document.querySelectorAll('li');
+
+listItems.forEach(listItem => {
+   listItem.addEventListener('click', event => {
+      event.target.classList.toggle('highlight');
+   });
 });
