@@ -54,7 +54,7 @@ section ul {
   overflow: scroll;
 }
 
-section > h2 {
+section>h2 {
   color: white;
   margin: 0;
 }
@@ -95,7 +95,7 @@ button:active {
   border: 1px solid #870099;
 }
 
-#active-projects > header {
+#active-projects>header {
   background: #870099;
   padding: 1rem;
   display: flex;
@@ -112,7 +112,7 @@ button:active {
   border: 1px solid #535353;
 }
 
-#finished-projects > header {
+#finished-projects>header {
   background: #535353;
   padding: 1rem;
   display: flex;
@@ -123,4 +123,8 @@ button:active {
 #finished-projects header h2 {
   color: white;
   margin: 0;
+}
+
+.droppable {
+  background: #ffe0ec;
 }
