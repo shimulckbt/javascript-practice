@@ -156,13 +156,19 @@ class ProjectList {
 
     list.addEventListener('dragenter', event => {
       if (event.dataTransfer.types[0] === 'text/plain') {
+        list.parentElement.classList.add('droppable');
         event.preventDefault();
       }
-      list.parentElement.classList.add('droppable');
     });
     list.addEventListener('dragover', event => {
       if (event.dataTransfer.types[0] === 'text/plain') {
         event.preventDefault();
+      }
+    });
+
+    list.addEventListener('dragleave', event => {
+      if (event.relatedTarget.closest(`#${this.type}-projects ul`) !== list) {
+        list.parentElement.classList.remove('droppable');
       }
     });
   }
@@ -173,7 +179,7 @@ class ProjectList {
 
   addProject(project) {
     this.projects.push(project);
-    DOMHelper.moveElement(project.id, `#${this.type}-projects ul`);
+    DOMHelper.moveElement(project.id, `#${this.type} -projects ul`);
     project.update(this.switchProject.bind(this), this.type);
   }
 
