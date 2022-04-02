@@ -54,7 +54,7 @@ console.log(calculateVatAmount(200));
 let userName = 'Max';
 
 function greetUser() {
-  // let name = 'Anna';
+  let name = 'Anna';
   console.log('Hi ' + name);
 }
 
@@ -63,3 +63,64 @@ let name = 'Maximilian';
 userName = 'Manuel';
 
 greetUser();
+
+//////    Recursion         ///////
+
+// function powerOf(x, n) {
+//   let result = 1;
+//   for (let i = 1; i <= n; i++) {
+//     result *= x;
+//   }
+//   return result;
+// }
+
+function powerOf(x, n) {
+  if (n === 1) {
+    return x;
+  }
+  return x * powerOf(x, n - 1);
+}
+
+console.log(powerOf(2, 3));
+
+const myself = {
+  name: 'Max',
+  friends: [
+    {
+      name: 'Manuel',
+      friends: [
+        {
+          name: 'Chris',
+          friends: [
+            {
+              name: 'Hari'
+            },
+            {
+              name: 'Amilia'
+            }
+          ]
+        }
+      ]
+    },
+    {
+      name: 'Julia'
+    }
+  ]
+};
+
+function getFriendNames(person) {
+  const collectedNames = [];
+
+  if (!person.friends) {
+    return [];
+  }
+
+  for (const friend of person.friends) {
+    collectedNames.push(friend.name);
+    collectedNames.push(...getFriendNames(friend));
+  }
+
+  return collectedNames;
+}
+
+console.log(getFriendNames(myself));
